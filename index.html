@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>متجر سويفت كارد - روابط التواصل</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<!-- إضافة مكتبة الأيقونات -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
@@ -130,12 +129,12 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
 .btn{
   display:flex;align-items:center;justify-content:center;gap:12px;
   width:100%;text-decoration:none;
-  padding:18px 24px;border-radius:7px; /* تم تعديل الحواف لـ 7px */
+  padding:18px 24px;border-radius:7px;
   font-family:'Tajawal',sans-serif;font-weight:900;font-size:1.1rem;
   position:relative;overflow:hidden;
   transition:transform 0.25s,box-shadow 0.25s;cursor:pointer;border:none;
 }
-.btn i { font-size: 1.3rem; } /* تنسيق الأيقونات */
+.btn i { font-size: 1.3rem; }
 
 .btn::after{
   content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
@@ -183,6 +182,16 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
 }
 #qrcode canvas,#qrcode img{border-radius:8px;display:block;}
 
+/* COUNTER BUTTON */
+.btn-counter {
+  margin-top: 15px;
+  cursor: default !important;
+  pointer-events: none;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  color: #f2ca5c;
+}
+
 /* SHARE */
 .share-wrap{width:100%;margin-top:16px;animation:riseUp 0.8s ease 1.02s both;}
 .btn-share{
@@ -222,11 +231,7 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
   border-top:1px solid rgba(212,175,55,0.1);
   width:100%;
 }
-.footer-dev{
-  font-size:1rem;font-weight:800;
-  color:#d4af37;
-  letter-spacing:0.5px;
-}
+.footer-dev{font-size:1rem;font-weight:800;color:#d4af37;letter-spacing:0.5px;}
 .footer-dev span{ color:#f2ca5c;font-weight:900; }
 .footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.18);margin-top:5px;font-weight:300;}
 
@@ -235,7 +240,6 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
 </head>
 <body>
 
-<!-- ═══ SPLASH ═══ -->
 <div id="splash">
   <div class="splash-ring">
     <div class="splash-ring-inner">
@@ -246,20 +250,15 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
   <div class="splash-bar"><div class="splash-fill"></div></div>
 </div>
 
-<!-- ═══ STARS ═══ -->
 <div class="stars" id="stars"></div>
 
 <div class="page">
 
-  <!-- WELCOME -->
   <div class="welcome">
     <div class="welcome-text">✨ مرحباً بكم في سويفت كارد ✨</div>
-    <div class="welcome-sub">
-      يسعدنا تواجدكم - حساباتنا الرسمية.
-      </div>
+    <div class="welcome-sub">يسعدنا تواجدكم - حساباتنا الرسمية.</div>
   </div>
 
-  <!-- LOGO -->
   <div class="logo-section">
     <div class="logo-glow"></div>
     <div class="logo-card">
@@ -267,26 +266,22 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
         <img src='https://i.postimg.cc/9MnTcQYy/swiftcard.jpg' border='0' alt='swiftcard'>
       </div>
     </div>
-    <!-- تأثيرات اللمعان حول الشعار -->
     <div class="spark" style="top:20%;left:15%;--sd:3s;--ss:0s;--sx:-15px;--sy:-15px;"></div>
     <div class="spark" style="bottom:20%;right:15%;--sd:3s;--ss:1s;--sx:15px;--sy:15px;"></div>
   </div>
 
-  <!-- BRAND -->
   <h1 class="brand-name">Swiftcard</h1>
   <div class="brand-taglines">
     <strong>🇸🇦 المتجر الرقمي السعودي الموثوق</strong><br>
     تسليم فوري &bull; دعم سريع &bull; دفع آمن
   </div>
 
-  <!-- DIVIDER -->
   <div class="divider">
     <div class="div-line"></div>
     <div class="div-diamond"></div>
     <div class="div-line"></div>
   </div>
 
-  <!-- BUTTONS -->
   <div class="buttons">
     <a href="https://wa.me/message/NRKRYF5SWV2VP1" class="btn btn-gold" target="_blank">
       <i class="fa-brands fa-whatsapp"></i><span>راسلني الآن</span>
@@ -308,15 +303,19 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
     </a>
   </div>
 
-  <!-- QR -->
   <div class="qr-wrap">
     <div class="qr-label">📲 امسح للوصول السريع</div>
     <div class="qr-box">
       <div id="qrcode"></div>
     </div>
+    
+    <!-- زر عداد العملاء -->
+    <div class="btn btn-counter" id="customerBtn">
+       <i class="fa-solid fa-user-shield"></i>
+       <span id="customer-count-text">جاري التحميل...</span>
+    </div>
   </div>
 
-  <!-- SHARE -->
   <div class="share-wrap">
     <button class="btn-share" id="shareBtn" onclick="toggleShare()">
       <i class="fa-solid fa-share-nodes"></i>
@@ -335,7 +334,6 @@ body{font-family:'Tajawal',sans-serif;background:#0d0d0d;color:#fff;min-height:1
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <p class="footer-dev"> تم التطوير بواسطة <span>عبد الودود</span> </p>
     <p class="footer-copy">© 2024 SwiftCard Store — جميع الحقوق محفوظة</p>
@@ -370,6 +368,40 @@ setTimeout(() => {
     correctLevel: QRCode.CorrectLevel.H
   });
 }, 100);
+
+// ─── التحكم بالعداد (تعديل يدوي) ───
+function initCustomerCounter() {
+    // 1. الرقم الأساسي الذي تريد أن يبدأ منه العد
+    const baseNumber = 5420; 
+    
+    // 2. تاريخ البداية (السنة-الشهر-اليوم)
+    // اجعل هذا التاريخ هو "اليوم" إذا كنت تريد بدء العد التصاعدي من الآن
+    const startDate = new Date('2024-11-20'); 
+    
+    // 3. كم عميل تريد أن يزداد العداد كل يوم؟
+    const dailyGrowth = 2; 
+
+    const now = new Date();
+    
+    // حساب الفرق بالأيام
+    const diffInMs = now - startDate;
+    const diffInDays = Math.max(0, Math.floor(diffInMs / (1000 * 60 * 60 * 24)));
+    
+    // حساب الزيادة التراكمية للأيام الماضية
+    let totalCount = baseNumber + (diffInDays * dailyGrowth);
+    
+    // حساب زيادة اليوم الحالي (توزيع الزيادة على ساعات اليوم)
+    const currentHour = now.getHours();
+    const hourlyAddition = (currentHour / 24) * dailyGrowth;
+    
+    totalCount += Math.floor(hourlyAddition);
+    
+    // عرض الرقم بتنسيق عربي جميل
+    const formattedNumber = totalCount.toLocaleString('ar-SA');
+    document.getElementById('customer-count-text').innerText = `أكثر من ${formattedNumber} عميل وثقوا بنا`;
+}
+
+initCustomerCounter();
 
 // ─── EMAIL COPY ───
 document.getElementById('emailBtn').addEventListener('click', function(e){
